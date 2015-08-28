@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
-
+		<style>
+			li.selected{
+				color:red;
+			}
+		</style>
 	</head>
 	<body>
-		
+
 		<p id="p">this is a test element</p>
 		<button type="button" id="showName">showName</button>
 		<button type="button" id="showAge">showAge</button>
 		<script type="text/javascript" src="./jquery-2.1.4.js"></script>
-		<script type="text/javascript" src="./jquery-listener.js"></script>
+		<script type="text/javascript" src="./jquery.listener.js"></script>
 		<script>
 		//用法
 		$.page=$.listener({
@@ -30,6 +34,21 @@
 		$("#showAge").bind("click",function(){
 			$.page.trigger("showAge");
 		})
+		</script>
+		<ul id="list">
+			<li>one</li>
+			<li>two</li>
+			<li>three</li>
+			<li>four</li>
+		</ul>
+		<script type="text/javascript" src="./jquery.bindBeforeAfter.js"></script>
+		<script>
+			$("#p").bind("myEvent",function(){});
+
+			$("#list li").bind("select",function(){
+				//alert("select");
+				console.log("selected");
+			})
 		</script>
 	</body>
 </html>
