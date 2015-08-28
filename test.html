@@ -50,5 +50,32 @@
 				console.log("selected");
 			})
 		</script>
+
+
+		<script>
+		//允许程序阻止事件
+
+		var remote=$.listener({
+			request:function(url,callback){
+				var e=$.Event("beforeRequest");
+				e.url=url;
+				this.trigger(e);
+
+				if( !e.isDefaultPrevented()){
+					$.ajax({
+						url:url,
+						success:callback
+					})
+				}
+			}
+		})
+		remote.bind("beforeRequest",function(e){
+			if(e.url == "contact.html"){
+				e.preventDefault();
+			}
+		})
+
+
+		</script>
 	</body>
 </html>
