@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="./jquery-2.1.4.js"></script>
+        <script>
+            $(function(){
+                (function(){
+                    var $two=$("#two");
+                    var twoPosition=$two.position();
+
+                    $div=$("<div id='insertAfterTwo'></div>");
+
+                    $div.insertAfter($("#two"));
+                    $div.css({
+                        position:"absolute",
+                        top:twoPosition.top+10,
+                        left:twoPosition.left+10
+                    })
+
+                })();
+                (function(){
+                    var $three=$("#three");
+                    var threePosition=$three.offset();
+                    $div=$("<div id='insertAfterThree'></div>");
+
+                    // $div.appendTo($("body"));
+                    $("body").append($div);
+
+                    $div.css({
+                        position:"absolute",
+                        top:threePosition.top+10,
+                        left:threePosition.left+10
+                    })
+                })();
+
+            })
+        </script>
+        <style>
+            #insertAfterThree{
+                width:10px;
+                height:10px;
+                background:black;
+            }
+            #insertAfterTwo{
+                width:10px;
+                height:10px;
+                background:black;
+            }
+            #one{
+                width:300px;
+                height:300px;
+                border:1px red solid;
+                margin:20px;
+            }
+            #two{
+                width:200px;
+                height:200px;
+                border:1px blue solid;
+                margin:30px;
+            }
+            #three{
+                width:100px;
+                height:100px;
+                border:1px green solid;
+                margin:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="one"></div>
+        <div id="two"></div>
+        <div id="three"></div>
+    </body>
+</html>

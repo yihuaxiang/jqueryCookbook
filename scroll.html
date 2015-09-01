@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="./jquery-2.1.4.js"></script>
+        <script>
+            $(function(){
+                $foo=$("#foo");
+
+                $("#bar").click(function(){
+                    var $lastP=$("#foo p:last");
+                    var lastPPosition=$lastP.position();
+
+                    var scrollPosition=$foo.scrollTop()+lastPPosition.top;
+
+                    $foo.scrollTop(scrollPosition);
+                })
+
+                $("#bam").click(function(){
+                    var $firstP=$("#foo p:first");
+                    var firstPPosition=$firstP.position();
+
+                    var scrollPosition=$foo.scrollTop()+firstPPosition.top;
+
+                    $foo.scrollTop(scrollPosition);
+                })
+            })
+        </script>
+        <style>
+            #foo{
+                width:300px;
+                height:20px;
+                padding:10px;
+                border:1px red solid;
+                overflow:auto;
+                position:relative;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="button" id="bar" value="click to scroll to alst paragraph" />
+        <input type="button" id="bam" value="click to scroll to fist paragraph" />
+        <br />
+        <hr />
+        <br />
+        <div id="foo">
+            <p>this is the first paragraphp this is the first paragraphp this is the first paragraphp this is the first paragraphp this is the first paragraphp this is the first paragraphp this is the first paragraphp this is the first paragraphp this is the first paragraphp this is the first paragraphp this is the first paragraphp this is the first paragraphp this is the first paragraphp this is the first paragraphp this is the first paragraphp this is the first paragraphp this is the first paragraphp this is the first paragraphp </p>
+            <p>this is the last paragraph this is the last paragraph this is the last paragraph this is the last paragraph this is the last paragraph this is the last paragraph this is the last paragraph this is the last paragraph this is the last paragraph this is the last paragraph </p>
+        </div>
+    </body>
+</html>

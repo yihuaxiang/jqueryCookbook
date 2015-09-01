@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="./jquery-2.1.4.js"></script>
+        <script type="text/javascript" src="./jquery.ajaxForm.js"></script>
+    </head>
+    <body>
+        <form id="form" action="ajax.html" method="post" >
+            <input type="text" name="username" /><br />
+            <input type="password" name="password" /><br />
+            <button type="submit" >submit</button>
+        </form>
+        <script>
+            $(function(){
+                $("#form").ajaxForm();
+            })
+        </script>
+    </body>
+</html>
