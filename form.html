@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .error{
+                background:red;
+                border:1px red solid;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="form" action="ajax.html" method="get">
+            <input type="text" name="username" class="required" /><br />
+            <input type="password" name="password" class="required" /><br />
+            <input type="checkbox" name="love" value="one" class="required"><input type="checkbox" name="love" value="two" classs="required" /><br />
+            <input type="radio" name="sex" value="male" class="required" /><input type="radio" name="sex" value="female" class="required" /><br />
+            <button type="submit" >submit</button>
+        </form>
+        <script src="./jquery-2.1.4.js"></script>
+        <script src="./jquery.checkform.js"></script>
+        <script src="./form.js"></script>
+    </body>
+</html>
