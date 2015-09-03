@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="./jquery-2.1.4.js"></script>
+		<script>
+			$(function(){
+				$.fn.check=function(settings){
+					settings=$.extend({onShow:null},settings);
+					this.each(function(){
+						$(this).show();
+						console.log(settings.onShow);
+						if($.isFunction(settings.onShow)){
+							settings.onShow.call(this);
+						}
+					})
+				}
+
+				$("#main").check({
+					onShow:function(){
+						console.log($(this).attr("id"));
+						console.log("done");
+					}
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="main"></div>
+	</body>
+</html>
