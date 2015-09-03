@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="./jquery-2.1.4.js"></script>
+		<script>
+			$(function(){
+				var months=["one","two","three","foru"];
+				$.each(months,function(index,value){
+					console.log(index+"-"+value);
+				})
+
+				var days={
+					sunday:0,
+					monday:1,
+					tuesday:2,
+					wednsday:3
+				}
+
+				$.each(days,function(key,value){
+					console.log(key +"-"+value);
+				})
+
+				var key="";
+				for(key in days){
+					console.log(key +"-->"+days[key]);
+				}
+
+				
+			})
+		</script>
+	</head>
+	<body>
+	$.each
+	</body>
+</html>
