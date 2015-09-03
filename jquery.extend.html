@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="./jquery-2.1.4.js"></script>
+		<script>
+			$(function(){
+				$.fn.highlight=function(settings){
+					settings=$.extend({
+						color:"red",
+						background:"blue",
+						border:"1px black solid"
+					},settings);
+
+					return this.each(function(){
+						$(this).css(settings);
+					})
+				}
+
+				$("p").eq(0).highlight();
+			})
+		</script>
+	</head>
+	<body>
+		<p>this is my p element</p>
+	</body>
+</html>

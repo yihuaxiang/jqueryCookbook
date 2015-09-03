@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="./jquery-2.1.4.js"></script>
+		<script>
+			$(function(){
+				$("#main").data("person",{
+					name:"fudongdong",
+					age:"23"
+				})
+
+				var mainPerson=$("#main").data("person");
+
+				console.log(mainPerson.name+" "+mainPerson.age);
+
+				$("#main").data("dom",{
+					label:$("body")
+				})
+
+				var $label=$("#main").data("dom").label;
+
+				console.log($label);
+				console.log($label.html());
+			})
+		</script>
+	</head>
+	<body>
+		<div id="main"></div>
+	</body>
+</html>
