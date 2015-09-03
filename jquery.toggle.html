@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="./jquery-2.1.4.js"></script>
+		<script>
+			$(function(){
+				$input = $("#input");
+
+				function setVisible(){
+					var value=$input.val();
+
+					$("#one").toggle(value == "us");
+					$("#two").toggle(value == "ca");
+				}
+
+				setVisible();
+
+				$input.bind("change keyup",setVisible);
+			})
+		</script>
+	</head>
+	<body>
+		<input type="text" name="name" value="ca" id="input" />
+		<button id="one">one</button><button id="two">two</button>
+	</body>
+</html>
