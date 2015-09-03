@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="./jquery-2.1.4.js"></script>
+		<script>
+		$(function(){
+			var months=["one","two","three","four","five"];
+
+			months=$.grep(months,function(value,i){
+				return ( value.indexOf("on") == 0);
+			})
+
+			$.each(months,function(index,value){
+				console.log(index+"->"+value);
+			})
+
+
+			var months=["one","two","three","foru"];
+
+			months=$.map(months,function(value,i){
+				return value.substr(0,2);
+			})
+
+			$.each(months,function(value,i){
+				console.log(value+"--->"+i);
+			})
+		})
+		</script>
+	</head>
+</html>
